@@ -1,0 +1,7 @@
+package brian.s.shapes;
+
+public interface Printable {
+    
+    public void printDescription();
+    
+}
