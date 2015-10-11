@@ -24,7 +24,7 @@ public class Circle extends Shape implements Printable {
     
    @Override 
    public double getArea(){
-       
+       // Do math to get area of a circle
        return Math.PI * radius * radius;
    }
 }
