@@ -1,0 +1,58 @@
+package brian.s.shapes;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+/**
+ *
+ * @author BDIAZ971
+ */
+public class ShapesRunnerSorter {
+
+
+public ShapesRunnerSorter (List<Shape> shapes ){
+		shapes.add(new Circle(6));
+		shapes.add(new Triangle(6, 4));
+		shapes.add(new Rectangle(8, 3));
+		shapes.add(new Rhombus(6, 5));
+		shapes.add(new Trapezoid(4, 10, 5));
+
+                bubbleSort(shapes);
+		// Bubble sort with a complexity of O(n^2)
+		
+	
+
+		for (Shape s: shapes){
+                    boolean operation;
+		do {
+			operation = false;
+			for (int i = 0; i < shapes.size() - 1; i++) {
+				// if the area of the shape at index i is greater than that of index i + 1, then swap the two
+				if (shapes.get(i).getArea() > shapes.get(i + 1).getArea()) {
+					// swap the elements
+					Shape tempShape = shapes.get(i + 1);
+					shapes.set(i + 1, shapes.get(i));
+					shapes.set(i, tempShape);
+					operation = true;
+				
+			
+		
+                                }
+                        }
+                }
+                 while (operation);
+			System.out.println("Calculating " + s.getShapeName() + " area:");
+			System.out.println("Area = " + s.getArea());
+			System.out.println("Printing " + s.getShapeName() + " description:");
+			s.printDescription();
+			System.out.println();
+                }
+}
+
+    private void bubbleSort(List<Shape> shapes) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+}
